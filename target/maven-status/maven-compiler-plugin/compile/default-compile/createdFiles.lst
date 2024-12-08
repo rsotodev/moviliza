@@ -1,0 +1,12 @@
+com\mycompany\moviliza\JakartaRestConfiguration.class
+com\mycompany\moviliza\servlets\SvAutos.class
+com\mycompany\moviliza\resources\JakartaEE10Resource.class
+logica\Controladora.class
+com\mycompany\moviliza\servlets\SvEliminar.class
+logica\Automovil.class
+com\mycompany\moviliza\servlets\SvEditar.class
+persistencia\exceptions\NonexistentEntityException.class
+persistencia\exceptions\PreexistingEntityException.class
+persistencia\AutomovilJpaController.class
+persistencia\ControladoraPersistencia.class
+persistencia\exceptions\IllegalOrphanException.class
