@@ -5,7 +5,7 @@
     <class>logica.Automovil</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-ctb76m2j1k6c738s64m0-a.oregon-postgres.render.com:5432/vehiculos_winw?sslmode=requir"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-ctb76m2j1k6c738s64m0-a.oregon-postgres.render.com:5432/vehiculos_winw?sslmode=require"/>
       <property name="javax.persistence.jdbc.user" value="vehiculos_winw_user"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="ZaKNr3kO5iiqhCMKnFDLrN2DOCYcDjB6"/>
