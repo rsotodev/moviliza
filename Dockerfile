@@ -19,5 +19,8 @@ COPY --from=build /app/target/Moviliza-1.0-SNAPSHOT.war /usr/local/tomcat/webapp
 # Exponemos el puerto 8080 (puerto por defecto de Tomcat)
 EXPOSE 8080
 
+# Usamos la variable de entorno PORT proporcionada por Render
+ENV PORT 8080
+
 # Comando para iniciar Tomcat
 CMD ["catalina.sh", "run"]
