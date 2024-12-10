@@ -16,11 +16,8 @@ FROM tomcat:9.0-jdk11-openjdk-slim
 # Copiamos el archivo WAR a la carpeta webapps de Tomcat
 COPY --from=build /app/target/Moviliza-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-# Exponemos el puerto 8080 (puerto por defecto de Tomcat)
-EXPOSE 8080
-
-# Usamos la variable de entorno PORT proporcionada por Render
-ENV PORT 8080
+# Exponemos el puerto que Render asignará dinámicamente
+EXPOSE $PORT
 
 # Comando para iniciar Tomcat
 CMD ["catalina.sh", "run"]
