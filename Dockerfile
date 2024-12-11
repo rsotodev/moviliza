@@ -1,22 +1,29 @@
-# Usa una imagen de Maven con OpenJDK 11 para compilar el proyecto
+# Etapa de construcción: utiliza Maven con OpenJDK 11
 FROM maven:3.8.6-openjdk-11-slim AS build
 
-# Directorio de trabajo donde copiamos el código fuente
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiamos todo el código fuente al contenedor
-COPY . /app
+# Copia los archivos del proyecto al contenedor
+COPY . .
 
-# Ejecutamos Maven para construir el WAR
+# Compila el proyecto y empaqueta el archivo WAR
 RUN mvn clean package -DskipTests
 
-# Usamos una imagen de Tomcat para ejecutar el archivo WAR
+# Etapa de despliegue: utiliza Tomcat 9 compatible con OpenJDK 11
 FROM tomcat:9.0-jdk11-openjdk-slim
 
-# Copiamos el archivo WAR a la carpeta webapps de Tomcat
+# Configura el conector JDBC para MySQL
+RUN apt-get update && apt-get install -y wget \
+    && wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.49.tar.gz \
+    && tar -xzf mysql-connector-java-5.1.49.tar.gz \
+    && mv mysql-connector-java-5.1.49/mysql-connector-java-5.1.49-bin.jar /usr/local/tomcat/lib/ \
+    && rm -rf mysql-connector-java-5.1.49*
+
+# Copia el archivo WAR compilado a la carpeta webapps de Tomcat
 COPY --from=build /app/target/Moviliza-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-# Exponemos el puerto que Render asignará dinámicamente
+# Exposición del puerto dinámico para Render
 EXPOSE $PORT
 
 # Comando para iniciar Tomcat

@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Moviliza"/>
+<Context path="/Moviliza">
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="NDB" password="qUwcjLjWiF" type="javax.sql.DataSource" url="jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5750999?zeroDateTimeBehavior=CONVERT_TO_NULL" username="sql5750999"/>
+</Context>

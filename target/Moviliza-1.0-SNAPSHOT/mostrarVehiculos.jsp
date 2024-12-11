@@ -1,9 +1,3 @@
-<%-- 
-    Document   : mostrarVehiculos
-    Created on : 6 dic 2024, 1:04:57 a.m.
-    Author     : USER
---%>
-
 <%@page import="java.util.List"%>
 <%@page import="logica.Automovil"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
