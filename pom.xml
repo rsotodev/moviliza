@@ -17,7 +17,7 @@
     <dependency>
         <groupId>jakarta.persistence</groupId>
         <artifactId>jakarta.persistence-api</artifactId>
-        <version>3.2.0</version>
+        <version>3.0.0</version>
     </dependency>
 
     <!-- Dependencia de EclipseLink (proveedor de JPA) -->
@@ -56,6 +56,12 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>3.0-alpha-1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
             <type>jar</type>
         </dependency>
     </dependencies>
